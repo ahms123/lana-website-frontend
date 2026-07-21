@@ -14,17 +14,10 @@ export function DownloadSection() {
             Download LANA
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
-            Get the Android APK now, and grab store links as distribution rolls out. Same dark gaming
-            theme you know from the app.
+            Get the Android APK now — same dark gaming theme you know from the app.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href={siteConfig.links.apk}>Download APK</ButtonLink>
-            <ButtonLink href={siteConfig.links.playStore} variant="secondary">
-              Play Store
-            </ButtonLink>
-            <ButtonLink href={siteConfig.links.appStore} variant="secondary">
-              App Store
-            </ButtonLink>
           </div>
         </div>
       </div>

@@ -27,8 +27,9 @@ export function ButtonLink({
   external,
 }: Props) {
   const classes = `inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold tracking-wide transition duration-200 ${variants[variant]} ${className}`;
+  const isExternal = external ?? /^https?:\/\//i.test(href);
 
-  if (external) {
+  if (isExternal) {
     return (
       <a href={href} className={classes} target="_blank" rel="noreferrer">
         {children}

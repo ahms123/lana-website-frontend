@@ -23,7 +23,8 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/lana-logo.png",
+    icon: [{ url: "/lana-logo.png", type: "image/png" }],
+    apple: [{ url: "/lana-logo.png", type: "image/png" }],
   },
 };
 

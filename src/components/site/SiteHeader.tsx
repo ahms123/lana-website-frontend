@@ -26,20 +26,26 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-muted transition hover:text-accent-cyan"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const external = /^https?:\/\//i.test(link.href);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-muted transition hover:text-accent-cyan"
+                {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="hidden md:block">
           <a
-            href="#download"
+            href={siteConfig.links.apk}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-xl bg-accent-cyan px-4 py-2 text-sm font-semibold text-primary transition hover:bg-accent-bright"
           >
             Get the app
@@ -65,16 +71,20 @@ export function SiteHeader() {
       {open ? (
         <div className="border-t border-accent-cyan/15 bg-primary/95 px-4 py-4 md:hidden">
           <nav className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary hover:text-accent-cyan"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const external = /^https?:\/\//i.test(link.href);
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary hover:text-accent-cyan"
+                  onClick={() => setOpen(false)}
+                  {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
         </div>
       ) : null}

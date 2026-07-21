@@ -4,11 +4,17 @@ export const siteConfig = {
   description:
     "A gaming rewards app for tasks, invites, claims, and wallet-ready progression — built for the next wave of players.",
   links: {
-    apk: "#download",
+    apk: "https://drive.google.com/uc?export=download&id=1NrWh1TZLtaeugBV6g0CeU374XTHh86Cv",
     playStore: "#download",
     appStore: "#download",
     telegram: "#",
     twitter: "#",
+  },
+  legal: {
+    entityName: "LANA",
+    supportEmail: "support@lana.app",
+    effectiveDate: "July 21, 2026",
+    lastUpdated: "July 21, 2026",
   },
 } as const;
 
@@ -17,7 +23,7 @@ export const navLinks = [
   { href: "#how-it-works", label: "How it works" },
   { href: "#roadmap", label: "Roadmap" },
   { href: "#faq", label: "FAQ" },
-  { href: "#download", label: "Download" },
+  { href: siteConfig.links.apk, label: "Download APK" },
 ] as const;
 
 export const stats = [
@@ -125,6 +131,6 @@ export const faqs = [
   },
   {
     q: "Where can I download the app?",
-    a: "Use the Download section for APK and store links as they become available for your platform.",
+    a: "Download the Android APK from the Download section or the Get the app button in the header.",
   },
 ] as const;
